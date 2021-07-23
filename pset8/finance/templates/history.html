@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/ -->
+    <div>
+        <h2 class="title text-center">History</h2>
+        <p>
+          <table class="table table-sm table-striped text-center col">
+            <thead>
+              <tr>
+                <th class="align-middle" scope="col">Operation</th>
+                <th class="align-middle" scope="col">Stock</th>
+                <th class="align-middle" scope="col">Date/time</th>
+                <th class="align-middle" scope="col">Price</th>
+                <th class="align-middle" scope="col">Shares</th>
+                <th class="align-middle" scope="col">Hldn. Value</th>
+                <th class="align-middle" scope="col">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for banco in hist %}
+              <tr>
+                <td class="align-middle">{{ banco.op }}</td>
+                <td class="align-middle">{{ banco.stock }}</td>
+                <td class="align-middle">{{ banco.time }}</td>
+                <td class="align-middle">{{ banco.price | usd }}</td>
+                <td class="align-middle">{{ banco.shares }}</td>
+                <td class="align-middle">{{ banco.amount | usd }}</td>
+                <td class="align-middle">{{ banco.balance | usd }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </p>
+    </div>
+
+{% endblock %}

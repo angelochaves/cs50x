@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+
+        <p>
+            <input type="text" style="width: 200px" class="form-control" placeholder="Name" id="name" name="name">
+            <br>
+            <select id="house" name="house">
+                <option disabled selected value>House</option>
+                <option value="Gryffindor">Gryffindor</option>
+                <option value="Hufflepuff">Hufflepuff</option>
+                <option value="Ravenclaw">Ravenclaw</option>
+                <option value="Slytherin">Slytherin</option>
+            </select>
+            <br>
+            <div>
+                <input type="radio" id="b" name="position" value="Beater"> Beater
+                <br>
+                <input type="radio" id="c" name="position" value="Chaser"> Chaser
+                <br>
+                <input type="radio" id="k" name="position" value="Keeper"> Keeper
+                <br>
+                <input type="radio" id="s" name="position" value="Seeker"> Seeker
+                <br>
+            </div>
+        </p>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+       document.querySelector('form').onsubmit = function()
+       {
+            if (!document.querySelector('input').value)
+            {
+                alert('You must provide your name!');
+                return false;
+            }
+
+            else if (!document.querySelector('select').value)
+            {
+                alert('You must provide your house!');
+                return false;
+            }
+
+            else if (!document.getElementById('b').checked)
+                if (!document.getElementById('c').checked)
+                    if (!document.getElementById('k').checked)
+                        if (!document.getElementById('s').checked)
+                            {
+                                alert('You must provide your position!');
+                                return false;
+                            }
+
+            return true;
+        };
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+SELECT CAST((CAST((ROUND(AVG(rating), 3) * 100) AS int)) AS float)/100 FROM ratings WHERE (SELECT id FROM movies WHERE year = 2012);

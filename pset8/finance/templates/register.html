@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+
+        $('document').ready(function()
+        {
+            $('form').on('submit', function(e)
+            {
+                e.preventDefault();
+                let uname = document.querySelector('#username');
+                $.get('/check?username=' + uname.value, function(response)
+                {
+                    if (response)
+                    {
+                        document.getElementById('register').submit();
+                        return true;
+                    }
+                    else
+                    {
+                        alert('user not available');
+                        location.reload();
+                        return false;
+
+                    }
+                });
+            });
+        });
+
+    </script>
+
+    <form action="/register" method="post" id="register">
+        <div class="form-group">
+                <input autocomplete="off" id="username" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            <br>
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+            <br>
+            <input class="form-control" id="confirmation" name="confirmation" placeholder="Confirm password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Create User</button>
+    </form>
+{% endblock %}

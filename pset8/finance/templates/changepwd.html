@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change Password
+{% endblock %}
+
+{% block main %}
+    <form action="/changepwd" method="post">
+        <div class="form-group">
+                <input class="form-control" name="curpassword" placeholder="Current password" type="password">
+            <br>
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" name="newpassword" placeholder="New password" type="password">
+            <br>
+            <input class="form-control" name="confirmation" placeholder="Confirm new password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Change password</button>
+    </form>
+{% endblock %}

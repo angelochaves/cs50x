@@ -1,0 +1,21 @@
+#intro {
+  color: blue;
+}
+
+h1 {
+  color: black;
+  text-align: left;
+  text-shadow: 3px 3px darkgrey;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+    float: none;
+}

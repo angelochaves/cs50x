@@ -1,0 +1,30 @@
+#intro {
+  color: blue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  text-shadow: 3px 3px darkgrey;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+#textw {
+  color: brown;
+}
+
+#textt {
+  color: orange;
+}
+
+#textp {
+  color: rgb(0,255,0);
+}
+
+#textb {
+  color: darkgrey;
+}

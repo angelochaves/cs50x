@@ -1,0 +1,38 @@
+Number of voters: 6
+Rank 1: ana
+Rank 2: dora
+Rank 3: alice
+Rank 4: lupe
+
+Rank 1: ana
+Rank 2: lupe
+Rank 3: alice
+Rank 4: dora
+
+Rank 1: dora
+Rank 2: alice
+Rank 3: ana
+Rank 4: lupe
+
+Rank 1: dora
+Rank 2: alice
+Rank 3: ana
+Rank 4: lupe
+
+Rank 1: alice
+Rank 2: dora
+Rank 3: lupe
+Rank 4: ana
+
+Rank 1: lupe
+Rank 2: dora
+Rank 3: ana
+Rank 4: alice
+
+ana: 2    |  ana: 2
+dora: 2   |  dora: 2
+alice: 1  |  alice: 0 eliminado
+lupe: 1   |  lupe: 0 eliminado
+
+ana
+dora

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/ -->
+    <div>
+        <h2 class="title text-center">Portfolio</h2>
+        <p>
+          <table class="table table-sm table-striped text-center col">
+            <thead>
+              <tr>
+                <th class="align-middle" scope="col">Symbol</th>
+                <th class="align-middle" scope="col">Share Amount</th>
+                <th class="align-middle" scope="col">Current Price USD</th>
+                <th class="align-middle" scope="col">Holding Value</th>
+                <th class="align-middle" scope="col">Quick Buy</th>
+                <th class="align-middle" scope="col">Quick Sell</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for banco in portf %}
+              <tr>
+                <td class="align-middle">{{ banco.stock }}</td>
+                <td class="align-middle">{{ banco.totshares }}</td>
+                <td class="align-middle">{{ curprice[banco.stock]["price"] | usd }}</td>
+                <td class="align-middle">{{ (curprice[banco.stock]["price"] * banco.totshares) | float | usd }}</td>
+                <td>
+                  <form action="/buy" method="post">
+                    <input type="hidden" name="symbol" value="{{ banco.stock }}"/>
+                    <input autocomplete="off" style="width: 50px" name="shares" placeholder="0" type="text" required />
+                    <button class="btn btn-primary" type="submit">Buy</button>
+                  </form>
+                </td>
+                <td>
+                  <form action="/sell" method="post">
+                    <input type="hidden" name="symbol" value="{{ banco.stock }}"/>
+                    <input autocomplete="off" style="width: 50px" name="shares" placeholder="0" type="text" required />
+                    <button class="btn btn-primary" type="submit">Sell</button>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <br><br>
+          <table class="table table-sm text-right col">
+          <thead></thead>
+            <tbody>
+              <tr>
+                <td class="align-middle"><b>Total in Cash</b></td>
+                <td class="align-middle">{{ cashnow | usd }}</td>
+              </tr>
+              <tr>
+                <td class="align-middle"><b>Grand Total</b></td>
+                <td class="align-middle">{{ grandtot | usd }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+    </div>
+
+{% endblock %}

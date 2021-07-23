@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/ -->
+    <div>
+        <h2 class="title text-center">Quoted Stock</h2>
+        <p>
+           <table class="table table-sm table-striped text-center col">
+              <thead>
+                <tr>
+                  <th class="align-middle" scope="col">Name</th>
+                  <th class="align-middle" scope="col">Price USD</th>
+                  <th class="align-middle" scope="col">Symbol</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="align-middle">{{ quote["name"] }}</td>
+                  <td class="align-middle">{{ price }}</td>
+                  <td class="align-middle">{{ quote["symbol"] }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </p>
+    </div>
+
+{% endblock %}

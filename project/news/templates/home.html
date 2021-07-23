@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <div class="form-group">
+            <input autofocus class="form-control" name="keyword" placeholder="Subject to search" type="text">
+            <br><br>
+            <input autofocus class="form-control" name="sources" placeholder="Any specific sources?..." type="text">
+            <br><br>
+            <input autofocus class="form-control" name="category" placeholder="Which categories?..." type="text">
+            <br><br>
+            <input autofocus class="form-control" name="lang" placeholder="What language?..." type="text">
+            <br><br>
+            <input autofocus class="form-control" name="country" placeholder="Any specific country?..." type="text">
+            <br><br>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/ -->
+    <div>
+        <h2 class="title text-center">Registered Players</h2>
+        <p>
+           <table class="table table-sm table-striped text-center col-4">
+              <thead>
+                <tr>
+                  <th class="align-middle" scope="col">Name</th>
+                  <th class="align-middle" scope="col">House</th>
+                  <th class="align-middle" scope="col">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for players in players %}
+                <tr>
+                  <td class="align-middle">{{ players[0] }}</td>
+                  <td class="align-middle">{{ players[1] }}</td>
+                  <td class="align-middle">{{ players[2] }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </p>
+    </div>
+
+{% endblock %}
